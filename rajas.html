@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring Forests in Rajasthan</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: linear-gradient(45deg, #ff9800, #e91e63);
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero Section Styling */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(75%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Main Content Styling */
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 15px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+
+    /* Inline Image Styling */
+    .content-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 15px auto;
+      display: block;
+      border-radius: 10px;
+      border: 4px solid #ddd;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-top: -10px;
+      color: #555;
+    }
+
+    
+    /* Simple button design */
+  .share-buttons {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .share-buttons a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Button hover effect */
+  .share-buttons a:hover {
+    background-color: #ddd;
+  }
+
+  /* WhatsApp button styling */
+  .whatsapp {
+    color: #25D366; /* WhatsApp Green */
+    border-color: #25D366;
+  }
+
+  .whatsapp:hover {
+    background-color: #25D366;
+    color: #fff;
+  }
+
+  /* Facebook button styling */
+  .facebook {
+    color: #3b5998; /* Facebook Blue */
+    border-color: #3b5998;
+  }
+
+  .facebook:hover {
+    background-color: #3b5998;
+    color: #fff;
+  }
+
+  /* Instagram button styling */
+  .instagram {
+    color: #E1306C; /* Instagram Pink */
+    border-color: #E1306C;
+  }
+
+  .instagram:hover {
+    background-color: #e130db;
+    color: #fff;
+  }
+
+  /* Font Awesome icon style */
+  .share-btn i {
+    margin-right: 8px;
+    transition: color 0.3s ease;
+  }
+
+  /* Change icon color on hover to white */
+  .whatsapp:hover i,
+  .facebook:hover i,
+  .instagram:hover i {
+    color: #2815d9;
+  }
+
+  /* Keep default icon color */
+  .whatsapp i {
+    color: #000000;
+  }
+
+  .facebook i {
+    color: #000000;
+  }
+
+  .instagram i {
+    color: #000000;
+  }
+    
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Exploring Forests in Rajasthan</h1>
+  </header>
+
+  <section class="hero">
+    <img src="img/f1.jpg" alt="Forests of Rajasthan">
+    <div class="hero-text">
+      <h2>Discover Rajasthan's Hidden Green Oases</h2>
+      <p>From lush jungles to serene wildlife sanctuaries</p>
+    </div>
+  </section>
+  <main>
+    <h2>Exploring Rajasthan’s Hidden Forest Treasures</h2>
+    <p>Rajasthan, known worldwide for its vast desert landscapes and opulent palaces, is a state that holds more secrets
+      than its golden dunes. Among these are its lush and thriving forests, which offer a unique contrast to the arid
+      image often associated with the region. These green oases, scattered across the state, are not just refuges for
+      wildlife but also hold cultural, historical, and ecological significance. Let’s embark on a journey to discover
+      these mesmerizing forests, each with its unique charm.</p>
+
+
+    <h2>1. Ranthambore National Park: The Crown Jewel of Rajasthan’s Forests</h2>
+    <img src="img/tiger.webp" alt="Ranthambore National Park" class="content-image">
+    <p class="image-caption">Ranthambore National Park</p>
+    <p>Located in southeastern Rajasthan, Ranthambore National Park is perhaps the most famous of the state’s forests.
+      Spread over 1,334 square kilometers, this park is a wildlife enthusiast’s dream.</p>
+    <h2>Key Highlights:</h2>
+    <ul>
+      <li><strong>Wildlife:</strong> Home to the majestic Bengal tiger, Ranthambore is also inhabited by leopards,
+        striped hyenas, marsh crocodiles, and over 300 bird species. Visitors can spot sambar deer grazing near water
+        bodies and monitor lizards basking in the sun.</li>
+      <li><strong>Historical Significance:</strong> The park also houses the ancient Ranthambore Fort, a UNESCO World
+        Heritage site. Built in the 10th century, the fort offers a glimpse into Rajasthan’s royal past.</li>
+      <li><strong>Safari Experience:</strong> The thrilling jeep and canter safaris take visitors deep into the heart of
+        the jungle, providing a rare chance to see tigers in their natural habitat.</li>
+    </ul>
+
+    <h3>Best Time to Visit:</h3>
+    <p>The park is best visited from October to April when the weather is pleasant, and tiger sightings are frequent.
+    </p>
+
+    <hr>
+
+    <h2>2. Mount Abu Wildlife Sanctuary: Rajasthan’s Green Paradise</h2>
+    <img src="img/Mount-Abu.webp" alt="Mount Abu Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Mount Abu Wildlife Sanctuary</p>
+    <p>Mount Abu, the only hill station in Rajasthan, boasts a sanctuary that’s a haven of tranquility and biodiversity.
+    </p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Biodiversity:</strong> The sanctuary is home to species like the Indian leopard, sloth bear, pangolin,
+        and over 250 bird species. The rare Delphinium flower blooms here, adding to the sanctuary’s allure.</li>
+      <li><strong>Scenic Beauty:</strong> With its cool climate and lush greenery, the sanctuary offers stunning views
+        of the Aravalli hills.</li>
+      <li><strong>Cultural Significance:</strong> The Dilwara Temples, located nearby, are a marvel of Jain architecture
+        and attract visitors from around the world.</li>
+    </ul>
+
+    <h3>Adventure Tip:</h3>
+    <p>Embark on a trekking expedition through the sanctuary’s dense woods to explore its hidden waterfalls and
+      panoramic viewpoints.</p>
+    <hr>
+
+    <h2>3. Kumbhalgarh Wildlife Sanctuary: A Blend of History and Wilderness</h2>
+    <img src="img/Kumbhalgarh-Wildlife.jpg" alt="Kumbhalgarh Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Kumbhalgarh Wildlife Sanctuary</p>
+    <p>Surrounding the iconic Kumbhalgarh Fort, this sanctuary offers a unique mix of history and natural beauty.</p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Diverse Wildlife:</strong> Visitors can spot wolves, jackals, and jungle cats, alongside bird species
+        like the grey junglefowl and golden oriole.</li>
+      <li><strong>Historical Context:</strong> The sanctuary’s proximity to the fort makes it a perfect spot for history
+        buffs and nature lovers alike.</li>
+      <li><strong>Nature Trails:</strong> Kumbhalgarh offers guided treks, allowing visitors to explore its pristine
+        beauty on foot.</li>
+    </ul>
+
+    <h3>Don’t Miss:</h3>
+    <p>The light and sound show at Kumbhalgarh Fort, which narrates the tales of Rajasthan’s valor and grandeur.</p>
+    <hr>
+
+    <h2>4. Keoladeo National Park: A Birdwatcher’s Paradise</h2>
+    <img src="img/keoladeo.jpg" alt="Keoladeo National Park" class="content-image">
+    <p class="image-caption"> Keoladeo National Park</p>
+    <p>Formerly known as Bharatpur Bird Sanctuary, this UNESCO World Heritage site is a must-visit for bird enthusiasts.
+    </p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Avian Diversity:</strong> The park hosts over 370 species of birds, including migratory birds like
+        Siberian cranes, pelicans, and flamingos.</li>
+      <li><strong>Eco-Friendly Exploration:</strong> Explore the park on foot, by bicycle, or in eco-friendly rickshaws
+        guided by knowledgeable locals.</li>
+      <li><strong>Wetland Wonders:</strong> The park’s wetlands create a stunning backdrop for photography and
+        relaxation.</li>
+    </ul>
+
+    <h3>Visitor Insight:</h3>
+    <p>Plan your visit during the winter months when migratory birds flock to the park.</p>
+    <hr>
+
+    <h2>5. Desert National Park: A Unique Ecosystem</h2>
+    <img src="img/desert.webp" alt="Desert National Park" class="content-image">
+    <p class="image-caption">Desert National Park</p>
+    <p>Located near Jaisalmer, this park showcases the beauty of desert flora and fauna.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong> Wildlife:</strong>Home to the endangered Great Indian Bustard, foxes, and monitor lizards.</li>
+      <li><strong> Sand Dunes:</strong> A mix of rugged cliffs and golden dunes..</li>
+      <li><strong> Cultural Appeal:</strong> Proximity to Jaisalmer adds historical charm.</li>
+    </ul>
+    <h3>Best of visit:</h3>
+    <p>October to March for a comfortable exploration of the desert.</p>
+    <hr>
+
+    <h2>6. Darrah National Park</h2>
+    <img src="img/Darrah-National-Park.jpg" alt="Darrah National Park" class="content-image">
+    <p class="image-caption">Darrah National Park</p>
+    <p>Once a hunting ground for royal families, this park is now a haven for wildlife.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Wolves, chinkaras, and wild boars.</li>
+      <li><strong>Scenic Beauty:</strong> Lush greenery amidst hills.</li>
+      <li><strong>Historical Context:</strong> Royal hunting lodges nearby.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> October to March.</p>
+    <hr>
+
+    <h2>7. Jhalana Leopard Safari Park</h2>
+    <img src="img/Jhalna-Leopard-Safari-Park.jpg" alt="Jhalana Leopard Safari Park" class="content-image">
+    <p class="image-caption">Jhalana Leopard Safari Park</p>
+    <p>Located near Jaipur, this park is famous for its leopard sightings.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Leopards, nilgai, and hyenas.</li>
+      <li><strong>Close Proximity:</strong> Easily accessible from Jaipur city.</li>
+      <li><strong>Photography:</strong> A haven for wildlife photographers.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> October to May.</p>
+    <hr>
+
+    <h2>8. Van Vihar Wildlife Sanctuary</h2>
+    <img src="img/vanvihar.jpg" alt="Van Vihar Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Van Vihar Wildlife Sanctuary</p>
+    <p>Located near Dholpur, this sanctuary is a lesser-known gem of Rajasthan.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Leopards, hyenas, and sloth bears.</li>
+      <li><strong>Historical Significance:</strong> Proximity to the Machkund Temple and other historical sites.</li>
+      <li><strong>Tranquility:</strong> A peaceful retreat for nature lovers.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> November to March.</p>
+    <hr>
+
+    <h2>9. Bhensrodgarh Wildlife Sanctuary</h2>
+    <img src="img/Bandh-Baretha-Wildlife-Sanctuary.jpg" alt="Bhensrodgarh Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Bhensrodgarh Wildlife Sanctuary</p>
+    <p>Located in the Chittorgarh district, this sanctuary is known for its tranquil atmosphere and scenic beauty.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Chinkaras, wild boars, and jackals.</li>
+      <li><strong>Landscape:</strong> Dense forests and the Chambal River flowing through the sanctuary.</li>
+      <li><strong>Bird Watching:</strong> Home to various migratory and resident bird species.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> November to March.</p>
+    <hr>
+
+    <h2>10. Kailadevi Wildlife Sanctuary</h2>
+    <img src="img/kailadevi-wildlife-sanctuary.jpg" alt="Kailadevi Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Kailadevi Wildlife Sanctuary</p>
+    <p>A part of the Ranthambore Tiger Reserve, Kailadevi is a peaceful sanctuary known for its biodiversity.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Tigers, wild boars, and sambars.</li>
+      <li><strong>Cultural Connection:</strong> The Kaila Devi Temple, a popular pilgrimage site, is located nearby.
+      </li>
+      <li><strong>Natural Beauty:</strong> Rolling hills and riverbeds enhance the sanctuary's charm.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> October to March.</p>
+    <hr>
+
+    <h2>11. Tal Chhapar Wildlife Sanctuary</h2>
+    <img src="img/Tal-Chhapar.webp" alt="Tal Chhapar Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Tal Chhapar Wildlife Sanctuary</p>
+    <p>This sanctuary in the Churu district is famous for its grasslands and blackbuck population.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Wildlife:</strong> Blackbucks, desert foxes, and migratory birds like harriers and demoiselle cranes.
+      </li>
+      <li><strong>Grassland Ecosystem:</strong> Known as the savannah of Rajasthan.</li>
+      <li><strong>Photography:</strong> Ideal for capturing wildlife and scenic landscapes.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> September to March.</p>
+    <hr>
+
+    <h2>12. Sita Mata Wildlife Sanctuary</h2>
+    <img src="img/sitamata.jpg" alt="Sita Mata Wildlife Sanctuary" class="content-image">
+    <p class="image-caption">Sita Mata Wildlife Sanctuary</p>
+    <p>A dense forest located in Pratapgarh, named after the mythological Sita.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Flora:</strong> Mixed deciduous forest with rare medicinal plants.</li>
+      <li><strong>Wildlife:</strong> Flying squirrels, sloth bears, and leopards.</li>
+      <li><strong>Mythological Connection:</strong> Associated with Ramayana legends.</li>
+    </ul>
+    <p><strong>Best Time to Visit:</strong> October to March.</p>
+    <hr>
+
+    <h2>13. Sariska Tiger Reserve: A Resilient Ecosystem</h2>
+    <img src="img/Sariska-National-Park.webp" alt="Sariska Tiger Reserve" class="content-image">
+    <p class="image-caption">Sariska Tiger Reserve</p>
+    <p>Nestled in the Alwar district, Sariska Tiger Reserve is a testament to nature’s resilience. Once facing severe
+      ecological challenges, the reserve is now a thriving sanctuary.</p>
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Flora and Fauna:</strong> Dominated by dry deciduous forests, Sariska’s landscape is home to tigers,
+        leopards, wild boars, and an array of bird species like the crested serpent eagle and Indian peafowl.</li>
+      <li><strong>Cultural Connection:</strong> The reserve is dotted with ancient temples, such as the Neelkanth
+        Temple, which adds a spiritual touch to the wilderness.</li>
+      <li><strong>Unique Safaris:</strong> Unlike other reserves, Sariska allows night safaris, giving visitors a chance
+        to witness nocturnal wildlife activity.</li>
+    </ul>
+
+    <h3>Visitor Tip:</h3>
+    <p>Combine your visit with a trip to the nearby Bhangarh Fort, often hailed as one of India’s most mysterious and
+      haunted locations.</p>
+    <hr>
+
+    <h2>Travel Tips for Forest Explorers</h2>
+    <ul>
+      <li><strong>Plan Your Visit:</strong> Book safaris and accommodations in advance, especially during peak seasons.
+      </li>
+      <li><strong>Respect Nature:</strong> Avoid littering and follow all guidelines provided by forest authorities.
+      </li>
+      <li><strong>Dress Appropriately:</strong> Wear comfortable clothing and sturdy shoes suitable for forest terrain.
+      </li>
+      <li><strong>Carry Essentials:</strong> Bring water, sunscreen, and insect repellent.</li>
+      <li><strong>Hire Guides:</strong> Local guides provide valuable insights into the region’s history, wildlife, and
+        culture.</li>
+    </ul>
+    <hr>
+
+    <h2>Conclusion</h2>
+    <p>Rajasthan’s forests are a testament to the state’s diverse natural beauty. Beyond the sand dunes and royal
+      palaces lies a world of verdant jungles, exotic wildlife, and serene landscapes waiting to be explored. Whether
+      you’re a wildlife enthusiast, a history buff, or a nature lover, these forests promise an unforgettable
+      experience. So pack your bags and set out to uncover the green heart of Rajasthan!</p>
+  </main>
+
+<!-- Social Media Share Buttons -->
+<section class="share-buttons">
+  <!-- WhatsApp Share Button -->
+  <a href="https://wa.me/?text=Exploring%20Rajasthan%20Forests%20-%20https://example.com" target="_blank" title="Share on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Facebook Share Button -->
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" title="Share on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Instagram Share Button (Note: Instagram does not have a direct sharing URL like WhatsApp or Facebook, but you can use it for linking to an Instagram profile or content) -->
+  <a href="https://www.instagram.com" target="_blank" title="Share on Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</section>
+
+  <footer>
+    &copy; 2025 PBlog. All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>

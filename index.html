@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(45deg, #ff9800, #e91e63);
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #e64a19;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #388e3c;
+        }
+
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .search-bar {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .search-bar input {
+                flex: 1;
+                max-width: 200px;
+            }
+
+            .cta-btn {
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cta-btn {
+                padding: 10px;
+            }
+        }
+
+        /* Banner Section with Background Image */
+        .banner {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            /* Adjust the height as per your preference */
+            background-image: url('https://plus.unsplash.com/premium_photo-1663950774974-956d44f6aa53?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent overlay for better text visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .banner h1 span {
+            color: #ffeb3b;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #f5f5f5;
+        }
+
+        .btn-banner {
+            padding: 12px 24px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-banner:hover {
+            background-color: #388e3c;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .banner {
+                height: 400px;
+            }
+
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            .btn-banner {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                height: 300px;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner p {
+                font-size: 0.9rem;
+            }
+
+            .btn-banner {
+                font-size: 12px;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+            background: linear-gradient(to right, rgba(255, 235, 59, 0.1), rgba(244, 67, 54, 0.1));
+            text-align: center;
+        }
+
+        .about-section img {
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section .content {
+            flex: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+
+            .about-section img {
+                margin-bottom: 20px;
+            }
+
+            .about-section h2 {
+                font-size: 28px;
+            }
+
+            .about-section p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section h2 {
+                font-size: 24px;
+            }
+
+            .about-section p {
+                font-size: 14px;
+            }
+        }
+
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Post Section Styling */
+        .post-section {
+            padding: 50px 20px;
+            background: linear-gradient(45deg, #ff9800, #e91e63);
+            color: #fff;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-buttons button:hover,
+        .filter-buttons button.active {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 0 auto;
+        }
+
+        .post-card {
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .post-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .post-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.read-more {
+            background-color: #ff9800;
+            color: #fff;
+        }
+
+        .btn.read-more:hover {
+            background-color: #e68900;
+        }
+
+        .btn.like {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .btn.like:hover {
+            background-color: #d6d6d6;
+        }
+
+        .btn.like span {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            .post-card img {
+                height: 150px;
+            }
+        }
+
+        .contact-section {
+            background: url('https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            padding: 80px 20px;
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Semi-transparent background for better readability */
+            border-radius: 10px;
+        }
+
+        .contact-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .contact-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .submit-btn {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e91e63;
+        }
+
+        /* Notification Styling */
+        .notification {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(50, 205, 50, 0.2);
+            /* Light green */
+            color: green;
+            border: 1px solid green;
+            border-radius: 5px;
+            display: none;
+            /* Initially hidden */
+            text-align: center;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 30px;
+            }
+
+            .contact-description {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-title {
+                font-size: 24px;
+            }
+
+            .contact-description {
+                font-size: 14px;
+            }
+        }
+
+        /* General Footer Styles */
+        footer {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            /* Dark gradient for an elegant touch */
+            color: #fff;
+            padding: 40px 20px;
+            font-family: 'Helvetica Neue', sans-serif;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #f39c12;
+            /* Gold color */
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .contact-info a {
+            color: #f39c12;
+            /* Gold color for email link */
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 22px;
+            color: #fff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+            /* Gold hover effect */
+            transform: scale(1.1);
+            /* Slight scaling effect */
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bdc3c7;
+            /* Light gray */
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-icons {
+                margin-top: 20px;
+            }
+        }
+
+        /* Modal container */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed position to cover entire screen */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal content (the image) */
+        .modal-content {
+            max-width: 80%;
+            /* Ensure image fits inside the modal */
+            max-height: 80vh;
+            margin: auto;
+            display: block;
+        }
+
+        /* Close button for modal */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Styling for the gallery section */
+        .gallery-section {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Grid layout for the gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            justify-items: center;
+        }
+
+        /* Styling for each gallery item */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        /* Image styling: Make images fit within their containers */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ensures images retain their aspect ratio */
+        }
+
+        /* Hover effect for gallery item */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button styling inside gallery section */
+        .gallery-item .buttons {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .buttons {
+            opacity: 1;
+        }
+
+        /* View button styling */
+        .gallery-item .btn.view-btn {
+            padding: 8px 16px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for view button (turn yellow on hover) */
+        .gallery-item .btn.view-btn:hover {
+            background-color: #ffcc00;
+            /* Yellow */
+        }
+
+        /* Like button styling (for gallery section) */
+        .gallery-item .btn.like-btn {
+            padding: 8px 16px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item .btn.like-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .gallery-item .like span {
+            margin-left: 5px;
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                /* Adjust for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <h1><span>PBlog</span></h1>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <a href="#home.html">Home</a>
+            <a href="#footer">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact Us</a>
+        </ul>
+    </header>
+    <section class="banner">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h1>Welcome to <span>PBlog</span></h1>
+                <p>Discover amazing articles, tips, and stories that inspire and educate.</p>
+                <button class="btn-banner">Explore Now</button>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <!-- Image on the side -->
+        <img src="https://images.unsplash.com/3/doctype-hi-res.jpg?q=80&w=2065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="About Us">
+
+        <!-- Content Section -->
+        <div class="content">
+            <h2>About Us</h2>
+            <p>
+                Welcome to PBlog, a platform where stories come to life. Our mission is to inspire, educate,
+                and entertain our readers with top-notch content covering a wide range of topics. Join us on
+                this journey as we explore the world one blog at a time.
+            </p>
+        </div>
+    </section>
+    <section id="blog" class="post-section">
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="active" onclick="filterPosts('all')">All</button>
+            <button onclick="filterPosts('nature')">Nature</button>
+            <button onclick="filterPosts('animals')">Animals</button>
+            <button onclick="filterPosts('travel')">Travel</button>
+        </div>
+
+        <!-- Post Grid -->
+        <div class="post-grid">
+
+            <!-- Post 1 -->
+            <div class="post-card" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Post Image">
+                <div class="post-content">
+                    <h3>Exploring the Forest</h3>
+                    <p>Immerse yourself in the wonders of untouched forests and lush greenery.</p>
+                    <div class="buttons">
+                        <a href="rajas.html" class="btn read-more">Read More</a>
+                        <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-card" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1609230268649-62dfaf00bd36?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Post Image">
+                <div class="post-content">
+                    <h3>Animal Kingdom</h3>
+                    <p>Discover the incredible lives of animals, from majestic lions to tiny hummingbirds.</p>
+                    <div class="buttons">
+                        <a href="animal kingdom.html" class="btn read-more">Read More</a>
+
+                        <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-card" data-category="travel">
+                <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Post Image">
+                <div class="post-content">
+                    <h3>Travel Adventures</h3>
+                    <p>Join us as we explore the most stunning travel destinations around the globe.</p>
+                    <div class="buttons">
+                        <a href="travel.html" class="btn read-more">Read More</a>
+                        <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="gallery-section">
+        <h2 class="gallery-title">Our Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="img/g1.jpg" alt="Image 1" onclick="viewImage('img/Bandh-Baretha-Wildlife-Sanctuary.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g1.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g2.jpg" alt="Image 2" onclick="viewImage('img/g2.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g2.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g3.jpg" alt="Image 3" onclick="viewImage('img/g3.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g3.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g4.jpg" alt="Image 4" onclick="viewImage('img/g4.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g4.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g5.jpg" alt="Image 5" onclick="viewImage('img/g5.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g5.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Image 6" onclick="viewImage('img/g6.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g6.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g7.jpg" alt="Image 7" onclick="viewImage('img/g7.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g7.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g8.jpg" alt="Image 8" onclick="viewImage('img/g8.jpg')">
+                <div class="buttons">
+                    <button class="btn view" onclick="viewImage('img/g8.jpg')">View</button>
+                    <button class="btn like" onclick="likePost(this)">Like <span>0</span></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal to display the image -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">×</span>
+            <img id="modalImage" class="modal-content" alt="Modal Image">
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h1 class="contact-title">Contact Us</h1>
+            <p class="contact-description">
+                We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.
+            </p>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div class="notification" id="notification">
+                Thank you for your message! We will get back to you shortly.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer" class="footer-content">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +91- 9982451056</p>
+                <p><strong>Email:</strong> <a href="mailto:pjangid8435@gmail.com">pjangid8435@gmail.com</a></p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/yourusername" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank" title="Twitter"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/_pooja_jangid_1852" target="_blank" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/pooja-jangid-88a1132b0" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Your Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("suZ3oSUa1oRGcq0pa");
+        })();
+
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();  
+
+                emailjs.sendForm('service_vbphd67', 'template_hl0kdcc', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+
+                        // Show the success notification
+                        var notification = document.getElementById('notification');
+                        notification.style.display = 'block';
+
+                        // Reset the form fields
+                        document.getElementById('contact-form').reset();
+
+                        
+                    }, (error) => {
+                        console.log('FAILED...', error);
+
+                        alert('There was an error sending your message. Please try again.');
+                    });
+            });
+        }
+
+    </script>
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function filterPosts(category) {
+            // Get all the post cards
+            const posts = document.querySelectorAll('.post-card');
+
+            // Remove active class from all filter buttons
+            const buttons = document.querySelectorAll('.filter-buttons button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Add active class to the clicked filter button
+            event.target.classList.add('active');
+
+            // Show or hide posts based on selected category
+            posts.forEach(post => {
+                if (category === 'all') {
+                    post.style.display = 'block'; 
+                } else if (post.getAttribute('data-category') === category) {
+                    post.style.display = 'block'; 
+                } else {
+                    post.style.display = 'none'; 
+                }
+            });
+        }
+
+        // Function to open the modal and display the image
+        function viewImage(imageSrc) {
+            // Get the modal and the image element
+            var modal = document.getElementById("imageModal");
+            var modalImage = document.getElementById("modalImage");
+
+            // Set the source of the modal image to the clicked image
+            modalImage.src = imageSrc;
+
+            // Display the modal
+            modal.style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside the image
+        window.onclick = function (event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to handle the Like button click
+        function likePost(button) {
+            // Get the current like count (from the span inside the button)
+            var likeSpan = button.querySelector('span');
+            var likeCount = parseInt(likeSpan.textContent);
+
+            // Increment the like count by 1
+            likeSpan.textContent = likeCount + 1;
+        }
+    </script>
+
+
+</body>
+
+</html>

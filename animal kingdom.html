@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Animal Kingdom: A Journey into the Wild</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: linear-gradient(45deg, #ff9800, #e91e63);
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero Section Styling */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(75%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Main Content Styling */
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 15px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+
+    /* Inline Image Styling */
+    .content-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 15px auto;
+      display: block;
+      border-radius: 10px;
+      border: 4px solid #ddd;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-top: -10px;
+      color: #555;
+    }
+
+    /* Simple button design */
+    .share-buttons {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .share-buttons a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #f1f1f1;
+      color: #333;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Button hover effect */
+    .share-buttons a:hover {
+      background-color: #ddd;
+    }
+
+    /* WhatsApp button styling */
+    .whatsapp {
+      color: #25D366;
+      /* WhatsApp Green */
+      border-color: #25D366;
+    }
+
+    .whatsapp:hover {
+      background-color: #25D366;
+      color: #fff;
+    }
+
+    /* Facebook button styling */
+    .facebook {
+      color: #3b5998;
+      /* Facebook Blue */
+      border-color: #3b5998;
+    }
+
+    .facebook:hover {
+      background-color: #3b5998;
+      color: #fff;
+    }
+
+    /* Instagram button styling */
+    .instagram {
+      color: #E1306C;
+      /* Instagram Pink */
+      border-color: #E1306C;
+    }
+
+    .instagram:hover {
+      background-color: #e130db;
+      color: #fff;
+    }
+
+    /* Font Awesome icon style */
+    .share-btn i {
+      margin-right: 8px;
+      transition: color 0.3s ease;
+    }
+
+    /* Change icon color on hover to white */
+    .whatsapp:hover i,
+    .facebook:hover i,
+    .instagram:hover i {
+      color: #2815d9;
+    }
+
+    /* Keep default icon color */
+    .whatsapp i {
+      color: #000000;
+    }
+
+    .facebook i {
+      color: #000000;
+    }
+
+    .instagram i {
+      color: #000000;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>The Animal Kingdom: A Journey into the Wild</h1>
+  </header>
+
+  <section class="hero">
+    <img src="img/k5.webp" alt="Animal Kingdom">
+    <div class="hero-text">
+      <h2>The Wonders of the Animal Kingdom</h2>
+      <p>Embark on a journey to explore the extraordinary creatures of the wild</p>
+    </div>
+  </section>
+
+  <main>
+    <h2>Introduction</h2>
+    <p>The Animal Kingdom is an awe-inspiring world, teeming with diverse species and fascinating ecosystems. From the
+      dense jungles of the Amazon to the icy wilderness of Antarctica, the animal world is a treasure trove of wonders
+      that continues to captivate scientists, adventurers, and nature lovers alike.</p>
+
+    <h2>1. The Majesty of Big Cats: Predators at the Top of the Food Chain</h2>
+    <img src="img/k1.jpg" alt="Big Cats" class="content-image">
+    <p class="image-caption">The Majestic Bengal Tiger</p>
+    <p>Big cats such as tigers, lions, leopards, and cheetahs are the undisputed royalty of the animal kingdom. These
+      predators have adapted over centuries to become the ultimate hunters, showcasing both strength and grace in their
+      pursuits.</p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Tigers:</strong> The Bengal Tiger, India’s national animal, is known for its strength and power, but
+        also for its endangered status due to habitat loss and poaching.</li>
+      <li><strong>Lions:</strong> Known as the "king of the jungle," lions are powerful and social creatures that live
+        in prides in Africa.</li>
+      <li><strong>Leopards:</strong> The elusive leopard can adapt to various habitats and is famous for its speed and
+        agility.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. Elephants: The Gentle Giants of the Savannah</h2>
+    <img src="img/k2.jpg" alt="Elephants" class="content-image">
+    <p class="image-caption">Elephants in the Wild</p>
+    <p>Elephants are the largest land animals on Earth, known for their intelligence and gentle nature. These
+      magnificent creatures are key to maintaining the health of their ecosystems.</p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>African Elephants:</strong> These are the largest of the two species of elephants, found in savannas
+        and forests across Africa.</li>
+      <li><strong>Asian Elephants:</strong> Slightly smaller than their African counterparts, these elephants are
+        culturally significant in many Asian countries.</li>
+      <li><strong>Conservation:</strong> Elephant populations are threatened due to poaching for ivory and habitat loss.
+        Conservation efforts are essential to protect these magnificent creatures.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. The Ocean’s Deep Secrets: Marine Life and the Blue Planet</h2>
+    <img src="img/k3.jpeg" alt="Blue Whale" class="content-image">
+    <p class="image-caption">The Blue Whale</p>
+    <p>Beneath the waves, a whole new world exists, teeming with life from tiny plankton to massive blue whales. Marine
+      creatures such as coral reefs, whales, and sharks play an essential role in maintaining the balance of ocean
+      ecosystems.</p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Blue Whales:</strong> The largest creatures on Earth, blue whales are gentle giants of the ocean,
+        feeding primarily on krill.</li>
+      <li><strong>Coral Reefs:</strong> Coral reefs are among the most biodiverse ecosystems on the planet, home to
+        millions of species of marine life.</li>
+      <li><strong>Sharks:</strong> Sharks are apex predators, playing a crucial role in maintaining the balance of
+        marine ecosystems.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. The Amazon Rainforest: A Living Treasure Chest</h2>
+    <img src="img/k4.webp" alt="Amazon Rainforest" class="content-image">
+    <p class="image-caption">The Lush Amazon Rainforest</p>
+    <p>The Amazon Rainforest is a biodiversity hotspot, home to millions of species, many of which remain undiscovered.
+      It's vital for global climate regulation and is a unique source of oxygen for the planet.</p>
+
+    <h3>Key Highlights:</h3>
+    <ul>
+      <li><strong>Poison Dart Frogs:</strong> These brightly colored frogs produce toxins as a defense mechanism against
+        predators in the Amazon.</li>
+      <li><strong>Jaguar:</strong> As one of the top predators in the rainforest, jaguars are elusive creatures that
+        play a key role in maintaining the health of the ecosystem.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Conclusion</h2>
+    <p>The animal kingdom is a vast and complex world, filled with creatures of all shapes and sizes, each playing an
+      essential role in the web of life. From the majestic big cats to the gentle giants of the savanna, the wonders of
+      the animal world continue to captivate and inspire. It is our duty to protect and conserve these extraordinary
+      species for future generations to admire and learn from.</p>
+  </main>
+  <!-- Social Media Share Buttons -->
+  <section class="share-buttons">
+    <!-- WhatsApp Share Button -->
+    <a href="https://wa.me/?text=Exploring%20The%20Animal%20Kingdom%20-%20https://example.com" target="_blank"
+      title="Share on WhatsApp" class="share-btn whatsapp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <!-- Facebook Share Button -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" title="Share on Facebook"
+      class="share-btn facebook">
+      <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+
+    <!-- Instagram Share Button -->
+    <a href="https://www.instagram.com" target="_blank" title="Share on Instagram" class="share-btn instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </section>
+
+
+  <footer>
+    &copy; 2025 PBlog. All Rights Reserved.
+  </footer>
+
+
+</body>
+
+</html>
